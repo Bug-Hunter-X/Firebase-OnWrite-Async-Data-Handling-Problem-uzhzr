@@ -1,0 +1,1 @@
+The issue stems from an asynchronous operation within a Firebase function that isn't properly handled, leading to unpredictable behavior. Specifically, the `onWrite` trigger doesn't wait for the asynchronous database operation to complete before returning, causing subsequent calls to retrieve the data to return stale values.  This is demonstrated in the `bug.js` file.
